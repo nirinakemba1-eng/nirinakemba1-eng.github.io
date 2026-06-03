@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kemba Nirina accompagne les dirigeants de TPE/PME dans leur gestion administrative, pré-comptabilité, facturation et coordination de projet à distance.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Kemba Nirina — Bras droit opérationnelle">
+<meta property="og:description" content="Déléguez votre back-office administratif pour retrouver du temps et garder le cap sur la croissance de votre entreprise.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kemba Nirina — Bras droit opérationnelle">
+<meta name="twitter:description" content="Gestion administrative, pré-comptabilité, facturation et coordination de projet pour TPE/PME francophones.">
+<title>Kemba Nirina — Bras droit opérationnelle pour TPE/PME</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--nuit:#1C1714;--nuit2:#231e1a;--or:#EF9F27;--or-dim:rgba(239,159,39,0.12);--creme:#F0E8DC;--terre:#D85A30;--sable:#A89880;--fd:'Cormorant Garamond',serif;--fb:'DM Sans',sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--nuit);color:var(--creme);font-family:var(--fb);font-weight:300;overflow-x:hidden;}
+::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-track{background:var(--nuit);}::-webkit-scrollbar-thumb{background:var(--or);border-radius:2px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 64px;display:flex;justify-content:space-between;align-items:center;background:rgba(28,23,20,0.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(239,159,39,0.1);transition:padding .3s;}
+nav.scrolled{padding:12px 64px;}
+.nav-logo{font-family:var(--fd);font-size:24px;font-weight:700;color:var(--creme);letter-spacing:3px;text-decoration:none;}
+.nav-logo em{color:var(--or);font-style:normal;}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{color:var(--sable);text-decoration:none;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;transition:color .3s;position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--or);transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+.nav-links a:hover{color:var(--or);}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
+.nav-links a.active{color:var(--or);}
+.nav-cta{padding:10px 24px;background:var(--or);color:var(--nuit);font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;border-radius:40px;text-decoration:none;transition:transform .2s,box-shadow .2s;}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(239,159,39,0.3);}
+.nav-toggle{display:none;width:42px;height:42px;border:1px solid rgba(239,159,39,.28);border-radius:50%;background:transparent;color:var(--creme);cursor:pointer;align-items:center;justify-content:center;position:relative;}
+.nav-toggle span,.nav-toggle::before,.nav-toggle::after{content:'';width:18px;height:1px;background:currentColor;position:absolute;transition:transform .25s,opacity .25s;}
+.nav-toggle::before{transform:translateY(-6px);}
+.nav-toggle::after{transform:translateY(6px);}
+.nav-toggle[aria-expanded="true"] span{opacity:0;}
+.nav-toggle[aria-expanded="true"]::before{transform:rotate(45deg);}
+.nav-toggle[aria-expanded="true"]::after{transform:rotate(-45deg);}
+.nav-mobile{display:none;position:fixed;top:73px;left:16px;right:16px;z-index:190;background:rgba(35,30,26,.98);border:1px solid rgba(239,159,39,.18);border-radius:12px;padding:18px;box-shadow:0 18px 48px rgba(0,0,0,.42);}
+.nav-mobile.open{display:block;}
+.nav-mobile a{display:block;padding:14px 8px;color:var(--creme);font-size:12px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(239,159,39,.08);}
+.nav-mobile a:last-child{border-bottom:0;background:var(--or);color:var(--nuit);text-align:center;border-radius:40px;margin-top:12px;font-weight:500;}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:140px 64px 100px;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;pointer-events:none;}
+.hero-bg svg{width:100%;height:100%;position:absolute;top:0;left:0;}
+.hero-eyebrow{font-size:10px;letter-spacing:6px;text-transform:uppercase;color:var(--or);margin-bottom:48px;display:flex;align-items:center;gap:20px;animation:fadeUp .8s ease both;}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';width:50px;height:1px;background:var(--or);opacity:.5;}
+.hero-monogram{width:130px;height:130px;margin:0 auto 48px;border-radius:50%;border:1.5px solid rgba(239,159,39,.45);display:flex;align-items:center;justify-content:center;position:relative;animation:fadeUp .8s .1s ease both, pulse 3s ease-in-out infinite;}
+.hero-monogram::before{content:'';position:absolute;inset:-14px;border-radius:50%;border:1px dashed rgba(239,159,39,.2);animation:spin 25s linear infinite;}
+.hero-monogram::after{content:'';position:absolute;inset:-28px;border-radius:50%;border:1px solid rgba(239,159,39,.08);}
+.hero-monogram span{font-family:var(--fd);font-size:64px;font-weight:700;color:var(--or);line-height:1;}
+@keyframes spin{to{transform:rotate(360deg);}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(239,159,39,.2);}50%{box-shadow:0 0 0 14px rgba(239,159,39,0);}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+.hero h1{font-family:var(--fd);font-size:clamp(52px,6.5vw,90px);font-weight:700;line-height:1.08;margin-bottom:20px;animation:fadeUp .8s .2s ease both;}
+.hero h1 em{color:var(--or);font-style:italic;}
+.hero-sub{font-family:var(--fd);font-size:22px;font-style:italic;color:rgba(240,232,220,.55);margin-bottom:36px;line-height:1.6;animation:fadeUp .8s .3s ease both;}
+.hero-desc{max-width:580px;font-size:16px;line-height:1.9;color:var(--sable);margin-bottom:56px;animation:fadeUp .8s .4s ease both;}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;animation:fadeUp .8s .5s ease both;}
+.btn{padding:15px 38px;border-radius:40px;font-family:var(--fb);font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;text-decoration:none;cursor:pointer;border:none;transition:transform .25s,box-shadow .25s;display:inline-block;}
+.btn:hover{transform:translateY(-3px);}
+.btn-gold{background:var(--or);color:var(--nuit);}
+.btn-gold:hover{box-shadow:0 10px 28px rgba(239,159,39,.35);}
+.btn-outline{border:1px solid rgba(240,232,220,.2);color:var(--creme);background:transparent;}
+.btn-outline:hover{border-color:var(--or);color:var(--or);}
+.hero-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;animation:fadeUp .8s .7s ease both;}
+.hero-scroll span{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--sable);}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--or),transparent);animation:scrollPulse 2s ease-in-out infinite;}
+@keyframes scrollPulse{0%,100%{opacity:.4;}50%{opacity:1;}}
+.divider{height:1px;background:linear-gradient(to right,transparent,rgba(239,159,39,.25),transparent);}
+.sec{padding:110px 64px;max-width:1240px;margin:0 auto;}
+.sec-full{padding:110px 0;}
+.sec-inner{max-width:1240px;margin:0 auto;padding:0 64px;}
+.sec-tag{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--or);margin-bottom:14px;display:flex;align-items:center;gap:14px;}
+.sec-tag::before{content:'';width:28px;height:1px;background:var(--or);}
+.sec-title{font-family:var(--fd);font-size:clamp(38px,4vw,60px);font-weight:700;line-height:1.12;margin-bottom:14px;}
+.sec-title em{color:var(--or);font-style:italic;}
+.sec-sub{font-family:var(--fd);font-size:18px;font-style:italic;color:var(--sable);margin-bottom:64px;}
+.about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:100px;align-items:start;}
+.about-text p{font-size:17px;line-height:1.95;color:rgba(240,232,220,.8);margin-bottom:22px;}
+.about-text p strong{color:var(--or);font-weight:500;}
+.about-quote{font-family:var(--fd);font-size:26px;font-style:italic;color:var(--creme);line-height:1.55;border-left:2px solid var(--or);padding-left:28px;margin-top:40px;}
+.about-card{background:var(--nuit2);border:1px solid rgba(239,159,39,.18);border-radius:16px;padding:44px;position:relative;overflow:hidden;top:20px;}
+.about-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--terre),var(--or));}
+.stat+.stat{margin-top:36px;padding-top:36px;border-top:1px solid rgba(239,159,39,.1);}
+.stat-n{font-family:var(--fd);font-size:56px;font-weight:700;color:var(--or);line-height:1;}
+.stat-l{font-size:13px;color:var(--sable);margin-top:4px;}
+.about-info{margin-top:36px;padding-top:36px;border-top:1px solid rgba(239,159,39,.1);font-size:13px;color:var(--sable);line-height:2.4;}
+.about-info a{color:var(--creme);text-decoration:none;transition:color .3s;}
+.about-info a:hover{color:var(--or);}
+.valeurs-bg{background:var(--nuit2);}
+.valeurs-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:64px;}
+.valeur{padding:48px 40px;border:1px solid rgba(239,159,39,.08);transition:background .3s,border-color .3s;}
+.valeur:hover{background:rgba(239,159,39,.04);border-color:rgba(239,159,39,.25);}
+.valeur-n{font-family:var(--fd);font-size:52px;font-weight:700;color:rgba(239,159,39,.18);line-height:1;margin-bottom:16px;}
+.valeur-t{font-family:var(--fd);font-size:26px;font-weight:600;color:var(--creme);margin-bottom:12px;}
+.valeur-d{font-size:14px;color:var(--sable);line-height:1.75;}
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:64px;}
+.service-card{background:var(--nuit2);border:1px solid rgba(239,159,39,.1);border-radius:12px;padding:44px;position:relative;overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s;}
+.service-card:hover{transform:translateY(-6px);border-color:rgba(239,159,39,.35);box-shadow:0 24px 48px rgba(0,0,0,.4);}
+.service-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--terre),var(--or));transform:scaleX(0);transform-origin:left;transition:transform .4s;}
+.service-card:hover::after{transform:scaleX(1);}
+.service-icon{width:52px;height:52px;margin-bottom:28px;border:1px solid rgba(239,159,39,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.service-icon svg{width:24px;height:24px;stroke:var(--or);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+.service-t{font-family:var(--fd);font-size:28px;font-weight:600;color:var(--creme);margin-bottom:12px;}
+.service-d{font-size:14px;color:var(--sable);line-height:1.85;margin-bottom:24px;}
+.service-list{list-style:none;}
+.service-list li{font-size:13px;color:rgba(240,232,220,.72);padding:7px 0;border-bottom:1px solid rgba(239,159,39,.06);display:flex;align-items:center;gap:12px;}
+.service-list li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--or);flex-shrink:0;}
+.outils-pills{display:flex;flex-wrap:wrap;gap:14px;margin-top:52px;}
+.pill{padding:11px 26px;border:1px solid rgba(239,159,39,.22);border-radius:40px;font-size:13px;letter-spacing:.8px;color:var(--sable);transition:all .3s;cursor:default;}
+.pill:hover{background:var(--or-dim);border-color:var(--or);color:var(--creme);}
+.parcours-bg{background:var(--nuit2);}
+.timeline{margin-top:64px;position:relative;padding-left:2px;}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--or),rgba(239,159,39,.08));}
+.tl-item{padding:0 0 56px 48px;position:relative;}
+.tl-dot{position:absolute;left:-6px;top:8px;width:13px;height:13px;border-radius:50%;background:var(--nuit2);border:2px solid var(--or);}
+.tl-year{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--or);margin-bottom:10px;}
+.tl-t{font-family:var(--fd);font-size:26px;font-weight:600;color:var(--creme);margin-bottom:6px;}
+.tl-org{font-size:12px;color:var(--terre);margin-bottom:10px;letter-spacing:1px;}
+.tl-d{font-size:14px;color:var(--sable);line-height:1.75;}
+.temoignages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px;}
+.temoignage-card{background:var(--nuit2);border:1px solid rgba(239,159,39,.1);border-radius:12px;padding:40px;position:relative;transition:border-color .3s,transform .3s;}
+.temoignage-card:hover{border-color:rgba(239,159,39,.3);transform:translateY(-4px);}
+.temoignage-card::before{content:'\201C';font-family:var(--fd);font-size:80px;font-weight:700;color:rgba(239,159,39,.15);position:absolute;top:16px;left:28px;line-height:1;}
+.temoignage-stars{color:var(--or);font-size:13px;margin-bottom:20px;letter-spacing:3px;}
+.temoignage-text{font-family:var(--fd);font-size:17px;font-style:italic;color:rgba(240,232,220,.85);line-height:1.75;margin-bottom:28px;}
+.temoignage-author{display:flex;align-items:center;gap:14px;}
+.temoignage-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--terre),var(--or));display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:20px;font-weight:700;color:var(--nuit);flex-shrink:0;}
+.temoignage-name{font-size:14px;color:var(--creme);font-weight:500;}
+.temoignage-role{font-size:12px;color:var(--sable);}
+.temoignage-placeholder{border:1px dashed rgba(239,159,39,.2);border-radius:12px;padding:40px;text-align:center;font-family:var(--fd);font-size:16px;font-style:italic;color:rgba(239,159,39,.4);}
+.tarifs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px;}
+.tarif-card{background:var(--nuit2);border:1px solid rgba(239,159,39,.1);border-radius:16px;padding:44px 36px;text-align:center;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s;}
+.tarif-card:hover{transform:translateY(-8px);box-shadow:0 28px 56px rgba(0,0,0,.45);}
+.tarif-card.featured{border-color:rgba(239,159,39,.45);background:linear-gradient(160deg,rgba(239,159,39,.07) 0%,var(--nuit2) 60%);}
+.tarif-badge{position:absolute;top:20px;right:-30px;background:var(--or);color:var(--nuit);font-size:9px;font-weight:500;letter-spacing:2px;padding:5px 44px;transform:rotate(35deg);}
+.tarif-name{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--sable);margin-bottom:24px;}
+.tarif-price{font-family:var(--fd);font-size:56px;font-weight:700;color:var(--or);line-height:1;margin-bottom:4px;}
+.tarif-period{font-size:12px;color:var(--sable);margin-bottom:36px;}
+.tarif-list{list-style:none;text-align:left;margin-bottom:40px;}
+.tarif-list li{font-size:13px;color:rgba(240,232,220,.75);padding:9px 0;border-bottom:1px solid rgba(239,159,39,.06);display:flex;align-items:center;gap:12px;}
+.tarif-list li::before{content:'✓';color:var(--or);font-size:12px;flex-shrink:0;}
+.tarif-btn{display:block;padding:14px;border:1px solid rgba(239,159,39,.3);border-radius:40px;text-decoration:none;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--creme);transition:all .3s;}
+.tarif-btn:hover,.tarif-card.featured .tarif-btn{background:var(--or);border-color:var(--or);color:var(--nuit);}
+.faq-list{margin-top:64px;display:flex;flex-direction:column;gap:2px;}
+.faq-item{border:1px solid rgba(239,159,39,.1);border-radius:8px;overflow:hidden;transition:border-color .3s;}
+.faq-item.open{border-color:rgba(239,159,39,.35);}
+.faq-q{width:100%;padding:28px 36px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;background:transparent;border:none;font-family:var(--fd);font-size:20px;font-weight:600;color:var(--creme);text-align:left;gap:20px;transition:color .3s;}
+.faq-item.open .faq-q{color:var(--or);}
+.faq-icon{width:32px;height:32px;border:1px solid rgba(239,159,39,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s,background .3s;color:var(--or);font-size:18px;}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--or);color:var(--nuit);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;padding:0 36px;}
+.faq-item.open .faq-a{max-height:300px;padding:0 36px 28px;}
+.faq-a p{font-size:15px;color:var(--sable);line-height:1.85;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-top:64px;}
+.contact-info h3{font-family:var(--fd);font-size:36px;font-weight:600;color:var(--creme);margin-bottom:20px;line-height:1.3;}
+.contact-info h3 em{color:var(--or);font-style:italic;}
+.contact-info p{font-size:15px;color:var(--sable);line-height:1.85;margin-bottom:36px;}
+.contact-links{display:flex;flex-direction:column;gap:16px;}
+.contact-link{display:flex;align-items:center;gap:16px;font-size:14px;color:var(--sable);text-decoration:none;transition:color .3s;}
+.contact-link:hover{color:var(--or);}
+.contact-link-icon{width:40px;height:40px;border:1px solid rgba(239,159,39,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s;}
+.contact-link:hover .contact-link-icon{background:var(--or-dim);border-color:var(--or);}
+.contact-link-icon svg{width:16px;height:16px;stroke:var(--or);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+.contact-form{background:var(--nuit2);border:1px solid rgba(239,159,39,.12);border-radius:16px;padding:48px;}
+.form-group{margin-bottom:24px;}
+.form-group label{display:block;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--sable);margin-bottom:10px;}
+.form-group input,.form-group textarea,.form-group select{width:100%;background:rgba(239,159,39,.05);border:1px solid rgba(239,159,39,.15);border-radius:8px;padding:14px 18px;color:var(--creme);font-family:var(--fb);font-size:14px;outline:none;transition:border-color .3s;}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:rgba(239,159,39,.5);}
+.form-group textarea{resize:vertical;min-height:120px;line-height:1.7;}
+.form-group select option{background:var(--nuit2);color:var(--creme);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-submit{width:100%;padding:16px;background:var(--or);color:var(--nuit);font-family:var(--fb);font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;border:none;border-radius:40px;cursor:pointer;transition:transform .25s,box-shadow .25s;margin-top:8px;}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(239,159,39,.35);}
+.form-success{display:none;text-align:center;padding:40px 20px;font-family:var(--fd);font-size:22px;font-style:italic;color:var(--or);}
+footer{padding:56px 64px 36px;border-top:1px solid rgba(239,159,39,.1);}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:60px;margin-bottom:56px;}
+.footer-logo{font-family:var(--fd);font-size:26px;font-weight:700;color:var(--creme);letter-spacing:2px;margin-bottom:16px;}
+.footer-logo em{color:var(--or);font-style:normal;}
+.footer-brand p{font-size:13px;color:var(--sable);line-height:1.8;max-width:280px;}
+.footer-col h4{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--or);margin-bottom:20px;}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:12px;}
+.footer-col ul li a{font-size:13px;color:var(--sable);text-decoration:none;transition:color .3s;}
+.footer-col ul li a:hover{color:var(--creme);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid rgba(239,159,39,.08);}
+.footer-copy,.footer-heart{font-size:12px;color:rgba(168,152,128,.6);}
+.footer-heart em{color:var(--or);font-style:normal;}
+.wa-btn{position:fixed;bottom:32px;right:32px;z-index:300;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,.4);text-decoration:none;transition:transform .3s,box-shadow .3s;animation:popIn .5s 1s ease both;}
+.wa-btn:hover{transform:scale(1.1);box-shadow:0 12px 32px rgba(37,211,102,.5);}
+.wa-btn svg{width:32px;height:32px;fill:white;}
+.wa-tooltip{position:absolute;right:72px;top:50%;transform:translateY(-50%);background:var(--nuit2);border:1px solid rgba(239,159,39,.2);border-radius:8px;padding:8px 14px;font-size:12px;color:var(--creme);white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .3s;}
+.wa-btn:hover .wa-tooltip{opacity:1;}
+@keyframes popIn{from{opacity:0;transform:scale(0);}to{opacity:1;transform:scale(1);}}
+.fi{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s;}
+.fi.v{opacity:1;transform:translateY(0);}
+.fi.d1{transition-delay:.1s;}.fi.d2{transition-delay:.2s;}.fi.d3{transition-delay:.3s;}
+@media(max-width:900px){nav{padding:16px 24px;}.nav-links,.nav-cta{display:none;}.nav-toggle{display:flex;}.sec,.sec-inner{padding-left:24px;padding-right:24px;}.hero{padding:120px 24px 80px;}.about-grid,.contact-grid,.footer-top{grid-template-columns:1fr;}.services-grid,.tarifs-grid,.temoignages-grid,.valeurs-grid{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}footer{padding:40px 24px 24px;}.footer-bottom{flex-direction:column;gap:12px;text-align:center;}.wa-btn{width:54px;height:54px;right:20px;bottom:20px;}.wa-tooltip{display:none;}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <a href="#hero" class="nav-logo">K<em>.</em>NIRINA</a>
+  <ul class="nav-links">
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#temoignages">Témoignages</a></li>
+    <li><a href="#tarifs">Tarifs</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Travaillons ensemble</a>
+  <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-controls="mobile-menu" aria-expanded="false"><span></span></button>
+</nav>
+<div class="nav-mobile" id="mobile-menu">
+  <a href="#about">À propos</a>
+  <a href="#services">Services</a>
+  <a href="#temoignages">Témoignages</a>
+  <a href="#tarifs">Tarifs</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Travaillons ensemble</a>
+</div>
+
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <svg viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice">
+      <circle cx="700" cy="450" r="320" fill="none" stroke="#EF9F27" stroke-width=".5" opacity=".08"/>
+      <circle cx="700" cy="450" r="460" fill="none" stroke="#EF9F27" stroke-width=".3" opacity=".05" stroke-dasharray="5 10"/>
+      <circle cx="700" cy="450" r="600" fill="none" stroke="#EF9F27" stroke-width=".2" opacity=".03"/>
+      <circle cx="1300" cy="80" r="220" fill="none" stroke="#EF9F27" stroke-width=".5" opacity=".1"/>
+      <circle cx="100" cy="820" r="200" fill="none" stroke="#D85A30" stroke-width=".4" opacity=".08" stroke-dasharray="3 7"/>
+      <polygon points="220,90 230,100 220,110 210,100" fill="#EF9F27" opacity=".3"/>
+      <polygon points="1140,180 1150,190 1140,200 1130,190" fill="#EF9F27" opacity=".25"/>
+      <polygon points="180,650 189,659 180,668 171,659" fill="#D85A30" opacity=".22"/>
+      <polygon points="700,60 708,68 700,76 692,68" fill="#EF9F27" opacity=".35"/>
+    </svg>
+  </div>
+  <div class="hero-eyebrow">Bras droit opérationnelle · Gestion admin</div>
+  <div class="hero-monogram"><span>K</span></div>
+  <h1>Garde la vision.<br><em>Je gère le reste.</em></h1>
+  <p class="hero-sub">L'admin, la pré-comptabilité, la coordination —<br>pour que tu te concentres sur ta croissance.</p>
+  <p class="hero-desc">J'accompagne les dirigeants de TPE/PME qui portent seuls le poids opérationnel de leur entreprise. Je prends en charge leur back-office pour leur redonner du temps — et une vraie vie en dehors du business.</p>
+  <div class="hero-btns">
+    <a href="#services" class="btn btn-gold">Découvrir mes services</a>
+    <a href="#contact" class="btn btn-outline">Prendre contact</a>
+  </div>
+  <div class="hero-scroll"><span>Découvrir</span><div class="scroll-line"></div></div>
+</section>
+
+<div class="divider"></div>
+
+<section class="sec" id="about">
+  <div class="about-grid">
+    <div class="about-text">
+      <div class="sec-tag fi">Qui suis-je</div>
+      <h2 class="sec-title fi d1">Kemba Nirina,<br><em>bras droit.</em></h2>
+      <p class="fi d2">Je suis assistante administrative polyvalente et bras droit opérationnelle. <strong>Ma mission : prendre en charge la gestion quotidienne du back-office</strong> des entrepreneurs et dirigeants de TPE/PME pour leur permettre de se recentrer sur la croissance de leur activité.</p>
+      <p class="fi d2">Pas pour exécuter des tâches mécaniquement. Pour <strong>anticiper, structurer, et tenir les fils</strong> que tu n'as plus le temps de tenir.</p>
+      <p class="fi d2">Je poursuis en parallèle un <strong>Master 2 en Gestion des Finances, Comptabilité et Audit</strong> à l'Université CNTEMAD Antananarivo.</p>
+      <blockquote class="about-quote fi d3">"Une assistante exécute.<br>Un bras droit anticipe."</blockquote>
+    </div>
+    <div class="fi d2">
+      <div class="about-card">
+        <div class="stat"><div class="stat-n">10h+</div><div class="stat-l">récupérées par semaine en moyenne</div></div>
+        <div class="stat"><div class="stat-n">100%</div><div class="stat-l">en télétravail · disponible et réactive</div></div>
+        <div class="stat"><div class="stat-n">0</div><div class="stat-l">surprise chez le comptable</div></div>
+        <div class="about-info">📍 Madagascar · Télétravail francophone<br>✉️ <a href="mailto:nirinakemba1@gmail.com">nirinakemba1@gmail.com</a><br>📱 <a href="tel:+261347586816">+261 34 75 86 816</a><br>💬 <a href="https://wa.me/261347586816">WhatsApp disponible</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<div class="valeurs-bg sec-full">
+  <div class="sec-inner" style="padding-top:110px;padding-bottom:110px;">
+    <div class="sec-tag fi">Ce qui me guide</div>
+    <h2 class="sec-title fi d1">Mes <em>valeurs</em></h2>
+    <div class="valeurs-grid">
+      <div class="valeur fi d1"><div class="valeur-n">01</div><div class="valeur-t">Rigueur</div><div class="valeur-d">L'admin ne s'improvise pas. Elle se tient chaque jour, avec méthode et constance. Trois passages par jour — jamais d'oubli.</div></div>
+      <div class="valeur fi d2"><div class="valeur-n">02</div><div class="valeur-t">Confiance</div><div class="valeur-d">Déléguer, c'est faire confiance. Je protège tes données, documente chaque process, reste transparente. Tu vois tout, à tout moment.</div></div>
+      <div class="valeur fi d3"><div class="valeur-n">03</div><div class="valeur-t">Anticipation</div><div class="valeur-d">Je ne réagis pas aux urgences — je les empêche. C'est là toute la différence entre quelqu'un qui exécute et un vrai bras droit.</div></div>
+    </div>
+  </div>
+</div>
+
+<section class="sec" id="services">
+  <div class="sec-tag fi">Ce que je prends en charge</div>
+  <h2 class="sec-title fi d1">Mes <em>services</em></h2>
+  <p class="sec-sub fi d2">Dans le cadre d'un accompagnement mensuel personnalisé.</p>
+  <div class="services-grid">
+    <div class="service-card fi d1">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M9 12h6M9 16h6M17 21H7a2 2 0 01-2-2V5a2 2 0 012-2h5l5 5v11a2 2 0 01-2 2z"/></svg></div>
+      <div class="service-t">Administration quotidienne</div>
+      <div class="service-d">Je gère le quotidien opérationnel pour que rien ne traîne, rien ne s'oublie.</div>
+      <ul class="service-list"><li>Gestion de la boîte mail</li><li>Rédaction et mise en forme de documents</li><li>Organisation et classement</li><li>Standardisation des process internes</li></ul>
+    </div>
+    <div class="service-card fi d2">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+      <div class="service-t">Pré-comptabilité</div>
+      <div class="service-d">Ton comptable reçoit des documents propres. Fini les surprises en fin de trimestre.</div>
+      <ul class="service-list"><li>Classement des pièces comptables</li><li>Suivi des dépenses et recettes</li><li>Rapprochement bancaire simplifié</li><li>Tableau de bord mensuel</li></ul>
+    </div>
+    <div class="service-card fi d1">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="service-t">Facturation & relances</div>
+      <div class="service-d">Chaque facture envoyée, suivie, relancée. Personne ne passe entre les mailles.</div>
+      <ul class="service-list"><li>Création et envoi des factures</li><li>Suivi rigoureux des paiements</li><li>Relances fermes mais respectueuses</li><li>Templates standardisés à ton image</li></ul>
+    </div>
+    <div class="service-card fi d2">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <div class="service-t">Coordination de projet</div>
+      <div class="service-d">Je tiens les fils que tu n'as plus le temps de tenir. Le projet avance même quand tu es absent.</div>
+      <ul class="service-list"><li>Suivi des tâches et échéances</li><li>Communication avec les parties prenantes</li><li>Reporting hebdomadaire clair</li><li>Onboarding structuré en 3 étapes</li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0;">
+  <div class="sec-tag fi">Maîtrise technique</div>
+  <h2 class="sec-title fi d1">Mes <em>outils</em></h2>
+  <div class="outils-pills">
+    <div class="pill fi d1">Notion</div><div class="pill fi d1">ClickUp</div><div class="pill fi d2">Google Suite</div><div class="pill fi d2">Canva</div><div class="pill fi d3">Trello</div><div class="pill fi d3">HubSpot</div><div class="pill fi d1">Calendly</div><div class="pill fi d2">Google Sheets</div><div class="pill fi d3">Gmail</div><div class="pill fi d1">Google Drive</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="sec" id="temoignages">
+  <div class="sec-tag fi">Ils en parlent</div>
+  <h2 class="sec-title fi d1">Ce qu'ils <em>disent</em></h2>
+  <p class="sec-sub fi d2">Les premiers retours de ceux qui ont osé déléguer.</p>
+  <div class="temoignages-grid">
+    <div class="temoignage-card fi d1">
+      <div class="temoignage-stars">★★★★★</div>
+      <p class="temoignage-text">"Depuis que Kemba gère mon admin, je n'ai plus ouvert mon ordi un dimanche soir. C'est la première fois en 3 ans."</p>
+      <div class="temoignage-author"><div class="temoignage-avatar">M</div><div><div class="temoignage-name">Marie L.</div><div class="temoignage-role">Consultante indépendante</div></div></div>
+    </div>
+    <div class="temoignage-card fi d2">
+      <div class="temoignage-stars">★★★★★</div>
+      <p class="temoignage-text">"La pré-comptabilité était mon cauchemar mensuel. Maintenant mon comptable me remercie. Je n'aurais pas cru."</p>
+      <div class="temoignage-author"><div class="temoignage-avatar">T</div><div><div class="temoignage-name">Thomas R.</div><div class="temoignage-role">Dirigeant TPE · E-commerce</div></div></div>
+    </div>
+    <div class="temoignage-placeholder fi d3" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:200px;">
+      <div style="font-size:36px;margin-bottom:12px;opacity:.3;">+</div>
+      Bientôt votre témoignage.<br><span style="font-size:12px;opacity:.5;">Les premières places sont limitées.</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<div class="parcours-bg sec-full">
+  <div class="sec-inner" style="padding-top:110px;padding-bottom:110px;">
+    <div class="sec-tag fi">Mon histoire</div>
+    <h2 class="sec-title fi d1">Parcours &<br><em>formations</em></h2>
+    <div class="timeline">
+      <div class="tl-item fi d1"><div class="tl-dot"></div><div class="tl-year">En cours · 2024 — présent</div><div class="tl-t">Master 2 — Gestion des Finances, Comptabilité & Audit</div><div class="tl-org">Université CNTEMAD · Antananarivo, Madagascar</div><div class="tl-d">Approfondissement en gestion financière, lecture des états comptables, analyse de la performance et structuration administrative.</div></div>
+      <div class="tl-item fi d2"><div class="tl-dot"></div><div class="tl-year">Expérience · En cours</div><div class="tl-t">Bras Droit Opérationnelle — Indépendante</div><div class="tl-org">TPE & PME · Télétravail francophone</div><div class="tl-d">Accompagnement de dirigeants dans la gestion administrative, la pré-comptabilité, la facturation et la coordination de projet.</div></div>
+      <div class="tl-item fi d3"><div class="tl-dot"></div><div class="tl-year">Collaboration</div><div class="tl-t">Prospection & Relation Client</div><div class="tl-org">Wooskill</div><div class="tl-d">Accompagnement de créateurs, coachs et formateurs dans la structuration de leur activité en ligne. Compétences en prospection B2B.</div></div>
+    </div>
+  </div>
+</div>
+
+<section class="sec" id="tarifs">
+  <div class="sec-tag fi">Investissement</div>
+  <h2 class="sec-title fi d1">Tarifs &<br><em>formules</em></h2>
+  <p class="sec-sub fi d2">Accompagnement mensuel · Démarrage en 3 étapes · Sans engagement long terme.</p>
+  <div class="tarifs-grid">
+    <div class="tarif-card fi d1">
+      <div class="tarif-name">Essentiel</div>
+      <div class="tarif-price">Sur devis</div>
+      <div class="tarif-period">/ mois · formule de base</div>
+      <ul class="tarif-list"><li>Administration quotidienne</li><li>Facturation & envoi</li><li>Suivi des paiements</li><li>Point hebdo 15 min</li><li>Tableau de bord mensuel</li></ul>
+      <a href="#contact" class="tarif-btn">Demander un devis</a>
+    </div>
+    <div class="tarif-card featured fi d2">
+      <div class="tarif-badge">Recommandé</div>
+      <div class="tarif-name">Bras Droit</div>
+      <div class="tarif-price">Sur devis</div>
+      <div class="tarif-period">/ mois · formule complète</div>
+      <ul class="tarif-list"><li>Administration quotidienne</li><li>Pré-comptabilité mensuelle</li><li>Facturation & relances</li><li>Coordination de projet</li><li>Tableau de bord mensuel</li><li>Disponibilité étendue</li><li>Reporting hebdomadaire</li></ul>
+      <a href="#contact" class="tarif-btn">Prendre contact</a>
+    </div>
+    <div class="tarif-card fi d3">
+      <div class="tarif-name">Sur mesure</div>
+      <div class="tarif-price">À définir</div>
+      <div class="tarif-period">selon tes besoins</div>
+      <ul class="tarif-list"><li>Services au choix</li><li>Volume adapté</li><li>Mission ponctuelle possible</li><li>Devis personnalisé en 48h</li><li>Flexibilité totale</li></ul>
+      <a href="#contact" class="tarif-btn">Discutons-en</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="sec" id="faq">
+  <div class="sec-tag fi">Questions fréquentes</div>
+  <h2 class="sec-title fi d1">Tu te <em>demandes…</em></h2>
+  <div class="faq-list fi d2">
+    <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" onclick="toggleFaq(this)">Comment se passe la collaboration concrètement ?<span class="faq-icon">+</span></button><div class="faq-a"><p>On démarre par une session de cadrage pour faire le tour de ce qui te pèse. Ensuite une semaine test pour que tu vois concrètement ce que ça change. Puis une montée en autonomie progressive. Un point hebdo de 15 min suffit.</p></div></div>
+    <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" onclick="toggleFaq(this)">C'est risqué de confier mes données financières à quelqu'un d'externe ?<span class="faq-icon">+</span></button><div class="faq-a"><p>NDA signé dès le début, process documentés, tableau de suivi partagé en lecture seule — tu vois tout ce que je fais, à tout moment. Tu gardes le contrôle total, tu délègues l'exécution.</p></div></div>
+    <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" onclick="toggleFaq(this)">Est-ce que j'ai assez de volume pour avoir besoin d'aide ?<span class="faq-icon">+</span></button><div class="faq-a"><p>Si tu passes plus de 5h par semaine sur des tâches administratives, tu as besoin d'aide — maintenant, pas dans 6 mois quand ce sera pire. La plupart des dirigeants pensent qu'ils n'ont "pas assez" jusqu'au jour où ils comptent vraiment.</p></div></div>
+    <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" onclick="toggleFaq(this)">Et si ça ne me convient pas après la semaine test ?<span class="faq-icon">+</span></button><div class="faq-a"><p>Aucun engagement. La semaine test est là précisément pour que tu valides que ça fonctionne pour toi, ton rythme, ta façon de travailler. Si ce n'est pas le bon fit, on s'arrête là sans pression.</p></div></div>
+    <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" onclick="toggleFaq(this)">Comment se passent les échanges au quotidien ?<span class="faq-icon">+</span></button><div class="faq-a"><p>Via les outils que tu utilises déjà — email, WhatsApp, Notion, ClickUp. Je m'adapte à ton environnement, pas l'inverse. Un point hebdo de 15 minutes suffit pour aligner les priorités.</p></div></div>
+    <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" onclick="toggleFaq(this)">Tu travailles depuis Madagascar — est-ce que c'est un problème ?<span class="faq-icon">+</span></button><div class="faq-a"><p>Tout se passe à distance. Mes clients sont francophones — France, Belgique, Suisse et ailleurs. Ma disponibilité et ma réactivité restent ma priorité. On s'organise ensemble selon ton rythme.</p></div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="sec" id="contact">
+  <div class="sec-tag fi">Passons à l'action</div>
+  <h2 class="sec-title fi d1">Écris-moi,<br><em>on en parle.</em></h2>
+  <div class="contact-grid">
+    <div class="fi d1">
+      <div class="contact-info">
+        <h3>Sans pression.<br><em>Sans engagement.</em></h3>
+        <p>Tu n'as pas besoin d'avoir tout décidé avant de m'écrire. On commence par une conversation — tu me parles de ce qui te pèse, je te dis si et comment je peux t'aider.</p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:nirinakemba1@gmail.com" class="contact-link"><div class="contact-link-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>nirinakemba1@gmail.com</a>
+        <a href="tel:+261347586816" class="contact-link"><div class="contact-link-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>+261 34 75 86 816</a>
+        <a href="https://wa.me/261347586816" class="contact-link" target="_blank" rel="noopener noreferrer"><div class="contact-link-icon"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>WhatsApp · Réponse rapide</a>
+        <a href="https://www.linkedin.com/in/kemba-nirina-famenontsoa-197741182" class="contact-link" target="_blank" rel="noopener noreferrer"><div class="contact-link-icon"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div>LinkedIn · Kemba Nirina Famenontsoa</a>
+      </div>
+    </div>
+    <div class="fi d2">
+      <form class="contact-form" id="contact-form">
+        <div id="form-content">
+          <div class="form-row">
+            <div class="form-group"><label for="f-prenom">Prénom</label><input type="text" placeholder="Marie" id="f-prenom" name="prenom" required autocomplete="given-name"></div>
+            <div class="form-group"><label for="f-nom">Nom</label><input type="text" placeholder="Dupont" id="f-nom" name="nom" autocomplete="family-name"></div>
+          </div>
+          <div class="form-group"><label for="f-email">Email</label><input type="email" placeholder="marie@entreprise.com" id="f-email" name="email" required autocomplete="email"></div>
+          <div class="form-group"><label for="f-service">Ce qui m'intéresse</label><select id="f-service" name="service"><option value="">Choisir un service…</option><option>Administration quotidienne</option><option>Pré-comptabilité</option><option>Facturation & relances</option><option>Coordination de projet</option><option>Formule complète Bras Droit</option><option>Sur mesure</option></select></div>
+          <div class="form-group"><label for="f-message">Mon message</label><textarea placeholder="Décris-moi rapidement ta situation et ce qui te pèse le plus en ce moment…" id="f-message" name="message" required></textarea></div>
+          <button class="form-submit" type="submit">Envoyer mon message →</button>
+        </div>
+        <div class="form-success" id="form-success" role="status"><div style="font-size:48px;margin-bottom:16px;">🖤</div>Ton application email va s'ouvrir.<br>Tu pourras relire puis envoyer le message.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand"><div class="footer-logo">KEMBA <em>NIRINA</em></div><p>Bras droit opérationnelle pour dirigeants de TPE/PME. Je prends en charge ton admin pour que tu reprennes le contrôle de ton temps — et de ta vie.</p></div>
+    <div class="footer-col"><h4>Navigation</h4><ul><li><a href="#about">À propos</a></li><li><a href="#services">Services</a></li><li><a href="#temoignages">Témoignages</a></li><li><a href="#tarifs">Tarifs</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:nirinakemba1@gmail.com">nirinakemba1@gmail.com</a></li><li><a href="tel:+261347586816">+261 34 75 86 816</a></li><li><a href="https://wa.me/261347586816" target="_blank" rel="noopener noreferrer">WhatsApp</a></li><li><a href="https://www.linkedin.com/in/kemba-nirina-famenontsoa-197741182" target="_blank" rel="noopener noreferrer">LinkedIn</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><div class="footer-copy">© 2026 Kemba Nirina Famenontsoa · Tous droits réservés</div><div class="footer-heart">Fait avec <em>♥</em> · Madagascar</div></div>
+</footer>
+
+<a href="https://wa.me/261347586816" class="wa-btn" target="_blank" rel="noopener noreferrer" aria-label="Écrire à Kemba sur WhatsApp">
+  <div class="wa-tooltip">Écrire sur WhatsApp</div>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+const nav=document.getElementById('nav');
+const navToggle=document.querySelector('.nav-toggle');
+const mobileMenu=document.getElementById('mobile-menu');
+function closeMobileMenu(){
+  mobileMenu.classList.remove('open');
+  navToggle.setAttribute('aria-expanded','false');
+  navToggle.setAttribute('aria-label','Ouvrir le menu');
+}
+navToggle.addEventListener('click',()=>{
+  const isOpen=mobileMenu.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded',String(isOpen));
+  navToggle.setAttribute('aria-label',isOpen?'Fermer le menu':'Ouvrir le menu');
+});
+mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMobileMenu));
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',window.scrollY>50);
+  document.querySelectorAll('section[id]').forEach(sec=>{
+    const top=sec.offsetTop-100,bottom=top+sec.offsetHeight;
+    if(window.scrollY>=top&&window.scrollY<bottom){
+      document.querySelectorAll('.nav-links a').forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+sec.id);});
+    }
+  });
+});
+const observer=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('v'),i*60);observer.unobserve(e.target);}});},{threshold:0.12});
+document.querySelectorAll('.fi').forEach(el=>observer.observe(el));
+function toggleFaq(btn){
+  const item=btn.parentElement,isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>{
+    i.classList.remove('open');
+    i.querySelector('.faq-q').setAttribute('aria-expanded','false');
+  });
+  if(!isOpen){
+    item.classList.add('open');
+    btn.setAttribute('aria-expanded','true');
+  }
+}
+document.getElementById('contact-form').addEventListener('submit',(event)=>{
+  event.preventDefault();
+  const prenom=document.getElementById('f-prenom').value.trim();
+  const nom=document.getElementById('f-nom').value.trim();
+  const email=document.getElementById('f-email').value.trim();
+  const service=document.getElementById('f-service').value;
+  const message=document.getElementById('f-message').value.trim();
+  if(!prenom||!email||!message){
+    event.currentTarget.reportValidity();
+    return;
+  }
+  const subject=`Demande de contact - ${prenom}${nom?' '+nom:''}`;
+  const body=[
+    `Prénom : ${prenom}`,
+    `Nom : ${nom||'Non renseigné'}`,
+    `Email : ${email}`,
+    `Service : ${service||'Non précisé'}`,
+    '',
+    'Message :',
+    message
+  ].join('\n');
+  window.location.href=`mailto:nirinakemba1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  document.getElementById('form-content').style.display='none';
+  document.getElementById('form-success').style.display='block';
+});
+</script>
+</body>
+</html>
